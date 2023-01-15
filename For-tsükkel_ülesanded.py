@@ -79,9 +79,8 @@ def make_hola_string(count: int) -> str:
     print(make_hola_string(0)) => ""
     """
     sum = ""
-    while count > 0:
+    for number in range (count):
         sum += "hola"
-        count -= 1
     return sum
 
 
