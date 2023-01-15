@@ -9,7 +9,7 @@ def sum_between(start: int, end: int) -> int:
     print(sum_between(5, 5)) => 5
     """
     sum = 0
-    for number in range (start, end+1):
+    for number in range(start, end + 1):
         sum += number
     return sum
 
@@ -22,7 +22,7 @@ def sum_of_even_numbers(n: int) -> int:
     print(sum_of_even_numbers(0)) => 0
     """
     sum = 0
-    for number in range (0, n+1, 2):
+    for number in range(0, n + 1, 2):
         sum += number
     return sum
 
@@ -35,11 +35,12 @@ def sum_of_multiples(n: int, end: int) -> int:
     print(sum_of_multiples(7, 10)) => 7
     print(sum_of_multiples(11, 10)) => 0
     """
-    sum =  0
-    for number in range(end+1):
+    sum = 0
+    for number in range(end + 1):
         if number % n == 0:
             sum += number
     return sum
+
 
 def cross_sum(numbers: str) -> int:
     """
@@ -77,10 +78,11 @@ def make_hola_string(count: int) -> str:
     print(make_hola_string(3)) => "holaholahola"
     print(make_hola_string(0)) => ""
     """
+    sum = ""
     while count > 0:
-        print("hola",end="")
+        sum += "hola"
         count -= 1
-    return ""
+    return sum
 
 
 def compound_interest(amount: int, years: int, rate: int) -> float:
@@ -91,7 +93,7 @@ def compound_interest(amount: int, years: int, rate: int) -> float:
     print(compound_interest(2000, 6, 8)) => 3173.748645888
     """
     while years > 0:
-        interests  = amount * rate / 100
+        interests = amount * rate / 100
         amount += interests
         years -= 1
     return amount
@@ -105,13 +107,18 @@ def remove_vowels(original_string: str) -> str:
     print(remove_vowels("hklmn")) => hklmn
     print(remove_vowels("aauuiii")) => ""
     """
-    # Your code goes here
+    vowels = ['a', 'e', 'i', 'o', 'u', 'õ', 'ä', 'ö', 'ü']
+    result = ""
+    for char in original_string:
+        if char.lower() not in vowels:
+            result = result + char
+    return result
 
 
 if __name__ == '__main__':
     print(sum_between(3, 5))  # => 3 + 4 + 5 = 12
     print(sum_between(5, 5))  # => 5
-    
+
     print(sum_of_even_numbers(5))  # => 0 + 2 + 4 = 6
     print(sum_of_even_numbers(0))  # => 0
 
@@ -132,7 +139,7 @@ if __name__ == '__main__':
 
     print(compound_interest(100, 2, 2))  # => 104.04
     print(compound_interest(2000, 6, 8))  # => 3173.748645888
-    
+
     print(remove_vowels("tere-tere"))  # => tr-tr
     print(remove_vowels("hklmn"))  # => hklmn
     print(remove_vowels("aauuiii"))  # => ""
